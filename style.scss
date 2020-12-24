@@ -1,0 +1,533 @@
+@font-face
+{
+    font-family: "lobster";
+    src: url("assets/fonts/Lobster/Lobster-Regular.ttf")
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+//__________________________variables______________________________//
+
+$background-dark: #2e353f;
+$bar-mobile-dark: #272d36;
+$body_background: #868396;
+$light-grey: #e4e3e7;
+$mobile-dark: #161b23;
+
+
+html {
+    font-size: 62.5%;
+}
+
+//________________________________extends_____________________________//
+
+.phone_base
+{
+    width: 30rem;
+    height: 60rem;
+    border: 1rem solid $mobile-dark;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-top: 10rem;
+    margin-left: 5rem;
+    font-family: "lobster";
+    font-size: 20px;
+}
+.flex
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top-bar
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    .time, .fa
+    {
+        font-size: 12px;
+        color: $light-grey;
+        
+    }
+}
+.fas-fa
+{
+    color: $body_background;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid $body_background;
+    border-radius: 30px;
+    padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+}
+.categories
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    width: 25rem;
+    height: 5rem;
+    border: 1px solid $body_background;
+    border-radius: 10px;
+    margin-left: 1.5rem;
+    padding-top: 0.4rem;
+    padding-left: 1rem;
+    transition: transform, 400ms;
+        &:hover
+        {
+            transform: scale(1.05);
+        }
+    .fas
+    {
+        color: $body_background;
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid $body_background;
+        border-radius: 30px;
+        padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+        &:hover
+        {
+            animation: rolls 400ms;
+        }
+       @keyframes rolls
+       {
+          0%
+          {
+              transform: rotate(0);
+          }
+          100%
+          {
+              transform: rotate(360deg);
+          }
+       }
+    }
+    .title
+    {
+        color:$body_background;
+    }
+    .count
+    {
+        color:$body_background;
+        font-family:'Times New Roman', Times, serif;
+        padding-right: 1rem;
+    }
+}
+.bottom-bar
+{
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: $body_background;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 12px;
+        background-color: $mobile-dark;
+        height: 70rem;
+        width: 100%;
+       
+        
+        .fas 
+        {
+            margin-top: 2rem;
+            text-align: center;
+           
+            
+        }
+        .settings
+        {
+            margin-left: -1.5rem;
+        }
+        .bottom_bar_left, .bottom_bar_right
+        {
+            
+            transition: transform 400ms;
+            &:hover
+            {
+                transform: scale(1.02);
+                width: 18px;
+            } 
+        }
+}
+.bottom-plus 
+    {
+        margin-top: -1rem;
+        //border: 1px solid $light-grey;
+        height: 3rem;
+        width: 3rem;
+       padding-left: 0.9rem;
+        border: 1px solid $body_background;
+        border-radius: 50px;
+        background-color: $body_background;
+        color: $light-grey;
+        font-size: 19px;
+        font-weight: bold;;
+    }
+
+.line
+{
+    display: block;
+    width: 8rem;
+    height: 0.3rem;
+    background-color: $mobile-dark;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1 solid $mobile-dark;
+    border-radius: 2rem;
+}
+
+
+//________________body__________________//
+body
+{
+    background-color: $body_background;
+}
+.container
+{
+   @extend .flex;
+   flex-wrap: wrap;
+  
+}
+
+.container_phone_one
+{
+    .phone_one
+    {
+        position: relative;
+        &_front
+        {
+            position: absolute;
+            z-index:1;
+            width: 100%;
+            height: 60rem;
+            background: linear-gradient(180deg,rgb(46, 53, 63, 0.9), rgb(22, 27, 35, 1));
+            h1 {
+                color: $light-grey;
+                font-size: 50px;
+                text-align: center;
+                
+            };
+            &_remember 
+            {
+                color: $body_background;
+                font-size: 16px;
+                font-family:'Times New Roman', Times, serif;
+                text-align: center;
+
+            }
+            &_account
+            {
+                color: $body_background;
+                font-size: 15px;
+                font-family:'Times New Roman', Times, serif;
+                text-align: center;
+                margin-top: 1.5rem;
+                text-decoration: underline;
+                transition: transform 400ms;
+                &:hover
+                {
+                    transform: scale(1.2);
+                }
+                
+            }
+            &_top_bar
+            {
+                @extend .top-bar;
+                margin-top: 1rem;
+                &_right
+                {
+                    display: flex;
+                    flex-direction: row;
+                    i {margin-right: 5px;}
+                }
+            }
+            
+            .map_heart
+            {
+                width: 8rem;
+                margin-top: 10rem;
+                margin-left: 10rem;
+            }
+            &_btn
+            {
+                background-color: $body_background;
+                width: 25rem;
+                border: 1px solid $body_background;
+                border-radius: 40px;
+                color: white;
+                margin-top: 15rem;
+                margin-left: 1.8rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                font-size: 15px;
+                transition: transform, 400ms;
+                &:hover
+                {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        &_back
+        {
+            height: 60rem;
+            width: 100%;
+            z-index: 0;
+        }
+    }
+    
+   
+    
+}
+
+.container_phone_two
+{
+    .phone_two_front{
+        width: 100%;
+        height: 60rem;
+        background: linear-gradient(180deg,rgb(46, 53, 63, 0.9), rgb(22, 27, 35, 1));
+
+        &_top_bar
+            {
+                @extend .top-bar;
+                &_left
+                {
+                    margin-top: 1rem;
+                }
+                &_right
+                {
+                    display: flex;
+                    flex-direction: row;
+                    
+                    i {margin-right: 5px;}
+                }
+            }
+        &_title
+        {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 4rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            &_subject
+            {
+                color: $light-grey;
+                h2 
+                {
+                font-size : 25px;
+                font-family:'Times New Roman', Times, serif;
+                }
+                span
+                {
+                    font-weight: bold;
+                    font-size: 35px;
+                    font-weight: light;
+                }
+             }
+             &_photo
+                {
+                    position: relative;
+                    img 
+                    {
+                        width: 8rem;
+                        height: 8rem;
+                        border: 1px solid $background-dark;
+                        border-radius: 50px;
+                        z-index:0;
+                    }
+                    p
+                    {
+                        position:absolute;
+                        margin-top:5rem;
+                        z-index:1;
+                        color:$light-grey;
+                        font-size: 12px;
+                        font-family: 'Times New Roman', Times, serif;
+                        border: 1ps solid $mobile-dark;
+                        border-radius: 50px;
+                        background-color: $mobile-dark;
+                        padding: 1rem 1.5rem 1rem 1.5rem;
+                    }
+                }
+        }
+        &_categories_one
+        {
+           @extend .categories;
+           margin-top: 5rem; 
+           margin-bottom: 2rem;
+        }
+        &_categories_two
+        {
+            @extend .categories;
+            margin-bottom: 2rem;
+            .fa
+            {
+                margin-top: 1rem;
+            
+            }
+        }
+        &_categories_three
+        {
+            @extend .categories;
+            margin-bottom: 2rem;
+        }
+        &_categories_four
+        {
+            @extend .categories;
+            margin-bottom: 4rem;
+        }
+
+        .bottom_bar
+        {
+            @extend .bottom-bar;
+        }
+        .plus
+        {
+            @extend .bottom-plus;
+        }
+    }
+    
+    
+    
+}
+
+.container_phone_three
+{
+   .phone_three_front
+   {
+    width: 100%;
+    height: 60rem;
+    background: linear-gradient(180deg,rgb(46, 53, 63, 0.9), rgb(22, 27, 35, 1));
+    position: relative;
+    &_top_bar
+        {
+            z-index:1;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            font-size: 12px;
+            color: $bar-mobile-dark;
+            &_left
+            {
+                margin-top: 1rem;
+                margin-left: 1rem;
+            }
+            &_right
+            {
+                display: flex;
+                flex-direction: row;
+                margin-left: 18rem;
+                margin-top: 1rem;
+                i {margin-right: 5px;}
+            }
+        }
+    .iframe
+    {
+        
+        z-index: 0;
+    }
+    &_navigation
+   {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      
+      .fa-arrow-left, .far
+      {
+          color: $body_background;
+          transition: transform 400ms;
+          &:hover
+          {
+              transform: scale(1.2);
+          }
+      }
+      .fa-utensils{
+        color:$light-grey;
+        background-color: $background-dark;
+        border: 2px solid $light-grey;
+        border-radius: 50px;
+        padding: 1rem;
+        position: absolute;
+        margin-top: -4rem;
+        margin-left: -2rem;
+        text-align: center;
+        width: 5rem;
+        height: 5rem;
+        font-size: 25px;
+        }
+      
+   }
+   .restaurant, .address
+      {
+          color: $body_background;
+          text-align: center;
+          font-family:'Times New Roman', Times, serif;
+          font-size: 14px;
+      }
+    .name
+    {
+          color: $light-grey;
+          text-align: center;
+          font-family:'Lobster';
+          font-size: 20px;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+    }
+    &_tag 
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        color: $body_background;
+        text-align: center;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 14px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        p
+        {
+            border: 1px solid $mobile-dark;
+            background-color: $mobile-dark;
+            border-radius: 10px;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            font-size: 10px;
+        }
+        
+    }
+    .carousel
+    {
+        height: 17rem;
+        width: 100%;
+        img 
+        {
+            height: 16rem;
+            width: 100%
+        }
+    }
+    .bottom_bar
+    {
+        @extend .bottom-bar;
+    }
+    .plus
+    {
+        @extend .bottom-plus;
+    }   
+   } 
+   
+   
+    
+}
+
+.container_phone
+{
+    @extend .phone_base;
+    
+}
+
