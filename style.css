@@ -162,17 +162,6 @@ html {
 .bottom-bar .settings, .container_phone_three .phone_three_front .bottom_bar .settings, .container_phone_two .phone_two_front .bottom_bar .settings {
   margin-left: -1.5rem;
 }
-.bottom-bar .bottom_bar_left, .container_phone_three .phone_three_front .bottom_bar .bottom_bar_left, .container_phone_two .phone_two_front .bottom_bar .bottom_bar_left, .bottom-bar .bottom_bar_right, .container_phone_three .phone_three_front .bottom_bar .bottom_bar_right, .container_phone_two .phone_two_front .bottom_bar .bottom_bar_right {
-  -webkit-transition: -webkit-transform 400ms;
-  transition: -webkit-transform 400ms;
-  transition: transform 400ms;
-  transition: transform 400ms, -webkit-transform 400ms;
-}
-.bottom-bar .bottom_bar_left:hover, .container_phone_three .phone_three_front .bottom_bar .bottom_bar_left:hover, .container_phone_two .phone_two_front .bottom_bar .bottom_bar_left:hover, .bottom-bar .bottom_bar_right:hover, .container_phone_three .phone_three_front .bottom_bar .bottom_bar_right:hover, .container_phone_two .phone_two_front .bottom_bar .bottom_bar_right:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  width: 18px;
-}
 
 .bottom-plus, .container_phone_three .phone_three_front .plus, .container_phone_two .phone_two_front .plus {
   margin-top: -1rem;

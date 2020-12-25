@@ -144,16 +144,7 @@ html {
         {
             margin-left: -1.5rem;
         }
-        .bottom_bar_left, .bottom_bar_right
-        {
-            
-            transition: transform 400ms;
-            &:hover
-            {
-                transform: scale(1.02);
-                width: 18px;
-            } 
-        }
+       
 }
 .bottom-plus 
     {

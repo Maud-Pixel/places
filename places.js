@@ -29,6 +29,6 @@ function get_clock()
 }
 
 
-setInterval(get_clock(), 1000);
+setInterval(get_clock, 1000);
 
 //_____________carrousel________________
